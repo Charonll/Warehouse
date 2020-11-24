@@ -11,7 +11,7 @@ public class App {
     JLabel label_B=new JLabel();
     JTextArea textArea_A=new JTextArea();
     JTextArea textArea_B=new JTextArea();
-    int mine_x=0,mine_y=0;
+
 
     //构造方法
     public App() {
@@ -19,13 +19,13 @@ public class App {
             @Override
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
-                if(e.getKeyCode()==KeyEvent.VK_LEFT){
-                    mine_x-=30;
-                    label_A.setBounds(mine_x,mine_y,100,100);
+                if(e.getKeyCode()==KeyEvent.VK_UP){
+
+                    label_A.setBounds(-30,0,100,100);
                 }
                 if(e.getKeyCode()==KeyEvent.VK_RIGHT){
-                    mine_x+=30;
-                    label_A.setBounds(mine_x,mine_y,100,100);
+
+                    label_A.setBounds(+30,0,100,100);
                 }
             }
         });
@@ -41,9 +41,10 @@ public class App {
 
         java.net.URL imgURL=App.class.getResource("plane1.png");
         label_A.setIcon(new ImageIcon("src/plane1.png"));
-        label_A.setBounds(100,100,100,100);
+        label_A.setBounds(100,500,128,128);
         java.net.URL imgURL1=App.class.getResource("background.png");
-        label_B.setIcon(new ImageIcon(imgURL1));
+        label_B.setIcon(new ImageIcon("src/background.png"));
+        label_B.setBounds(0,0,512,720);
 
 
         JFrame frame = new JFrame("TestGUI");
