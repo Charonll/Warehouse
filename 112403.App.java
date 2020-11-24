@@ -11,7 +11,7 @@ public class App {
     JLabel label_B=new JLabel();
     JTextArea textArea_A=new JTextArea();
     JTextArea textArea_B=new JTextArea();
-
+int min_x, min_y;
 
     //构造方法
     public App() {
@@ -19,13 +19,13 @@ public class App {
             @Override
             public void keyPressed(KeyEvent e) {
                 super.keyPressed(e);
-                if(e.getKeyCode()==KeyEvent.VK_UP){
-
-                    label_A.setBounds(-30,0,100,100);
+                if(e.getKeyCode()==KeyEvent.VK_LEFT){
+                min_x-=30;
+                    label_A.setBounds(min_x,min_y,100,100);
                 }
                 if(e.getKeyCode()==KeyEvent.VK_RIGHT){
-
-                    label_A.setBounds(+30,0,100,100);
+                    min_x+=30;
+                    label_A.setBounds(min_x,min_y,100,100);
                 }
             }
         });
